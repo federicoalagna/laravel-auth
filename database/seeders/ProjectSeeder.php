@@ -11,5 +11,10 @@ class ProjectSeeder extends Seeder
             'title' => 'Progetto 1',
             'description' => 'Descrizione del progetto 1',
         ]);
+
+        Project::create([
+            'title' => 'Progetto 2',
+            'description' => 'Descrizione del progetto 2',
+        ]);
     }
 }
