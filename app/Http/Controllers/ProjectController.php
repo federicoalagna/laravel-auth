@@ -21,8 +21,8 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'description' => 'required',
+            'titolo' => 'required',
+            'descrizione' => 'required',
         ]);
 
         Project::create($request->all());
@@ -42,8 +42,8 @@ class ProjectController extends Controller
     public function update(Request $request, Project $project)
     {
         $request->validate([
-            'title' => 'required',
-            'description' => 'required',
+            'titolo' => 'required',
+            'descrizione' => 'required',
         ]);
 
         $project->update($request->all());

@@ -1,29 +1,18 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Profile') }}
-        </h2>
-    </x-slot>
+@extends('layouts.backoffice')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-profile-information-form')
-                </div>
-            </div>
-
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-password-form')
-                </div>
-            </div>
-
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.delete-user-form')
-                </div>
-            </div>
+@section('content')
+    <h1>Modifica Progetto</h1>
+    <form action="{{ route('projects.update', $project) }}" method="POST">
+        @csrf
+        @method('PUT')
+        <div>
+            <label for="title">Titolo:</label>
+            <input type="text" id="title" name="title" value="{{ $project->title }}" required>
         </div>
-    </div>
-</x-app-layout>
+        <div>
+            <label for="description">Descrizione:</label>
+            <textarea id="description" name="description" required>{{ $project->description }}</textarea>
+        </div>
+        <button type="submit">Aggiorna</button>
+    </form>
+@endsection

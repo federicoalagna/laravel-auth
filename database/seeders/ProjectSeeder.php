@@ -8,13 +8,13 @@ class ProjectSeeder extends Seeder
     public function run()
     {
         Project::create([
-            'title' => 'Progetto 1',
-            'description' => 'Descrizione del progetto 1',
+            'titolo' => 'Progetto 1',
+            'descrizione' => 'Descrizione del progetto 1',
         ]);
 
         Project::create([
-            'title' => 'Progetto 2',
-            'description' => 'Descrizione del progetto 2',
+            'titolo' => 'Progetto 2',
+            'descrizione' => 'Descrizione del progetto 2',
         ]);
     }
 }
